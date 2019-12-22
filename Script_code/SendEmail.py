@@ -3,12 +3,12 @@ from email.mime.text import MIMEText
 from email.header import Header
 
 class SEmail:
-    def __init__(self,):
+    def __init__(self):
         # QQ SMTP 服务
         mail_host = "smtp.qq.com"  # 设置服务器
         mail_user = "centuryw@vip.qq.com"  # 用户名
         mail_pass = "mswtkjtuuqadbcag"  # 口令
-        self.sender = 'centuryw@vip.qq.com'
+        self.sender = "centuryw@vip.qq.com"
         print('目前账户为:{}'.format(self.sender))
         self.smtpObj = smtplib.SMTP()
         self.smtpObj.connect(mail_host, 25)  # 25 为 SMTP 端口号

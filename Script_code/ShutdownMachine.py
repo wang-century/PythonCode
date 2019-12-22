@@ -2,13 +2,10 @@ import os
 import time
 
 input_time = input('请输入关机时间，格式如：小时:分钟 ：')
-
 if input_time == 'off':
     os.system('shutdown -a')
-
 h1 = int(input_time[0:2])
 m1 = int(input_time[3:5])
-
 print(h1, m1)
 mytime = time.strftime('%H:%M:%S')
 h2 = int(mytime[0:2])

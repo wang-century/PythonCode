@@ -2,11 +2,10 @@ import os
 from time import sleep
 from random import choice
 
-
 def shuabao_app():
     '''刷宝视频脚本'''
-    device_name = 'emulator-5556'###'192.168.0.100:5555'
-    os.system('adb connect {}'.format( device_name))
+    device_name = '192.168.0.101:5555'###'emulator-5556'
+    os.system('adb connect {}'.format(device_name))
     os.system('adb -s {} shell input keyevent 224'.format(device_name))
     sleep_list = [i for i in range(6,12,2)] # 等待时间列表
     while True:
@@ -21,8 +20,26 @@ def shuabao_app():
         #     sleep(10)
         os.system('adb -s {} shell input keyevent 4'.format(device_name))  # 点击返回键
 
-
-
+def shuabao_app1():
+    '''刷宝视频脚本'''
+    #device_name = '192.168.0.100:5555'###'emulator-5556'
+    #os.system('adb connect {}'.format( device_name))
+    #os.system('adb -s {} shell input keyevent 224'.format(device_name))
+    os.system('adb shell input keyevent 224')
+    sleep_list = [i for i in range(6,12,2)] # 等待时间列表
+    while True:
+        print('上滑屏幕',end='\t')
+        #os.system('adb -s {} shell input swipe 320 882 320 140'.format( device_name))  # 上划屏幕操作
+        os.system('adb shell input swipe 320 882 320 140')
+        sleep_time = choice(sleep_list)
+        print('等待{}秒'.format(sleep_time))
+        sleep(sleep_time)
+        # os.system('adb -s {} shell input tap 978 1606'.format(device_name))  # 点击评论
+        # for i in range(5):
+        #     os.system('adb -s {} shell input swipe 300 1000 300 10'.format(device_name))  # 上划
+        #     sleep(10)
+        #os.system('adb -s {} shell input keyevent 4'.format(device_name))  # 点击返回键
+        os.system('adb shell input keyevent 4')
 # os.system('adb shell screencap -p /sdcard/sc.png') # 屏幕截图
 # os.system('adb pull /sdcard/sc.png')    # 导出到电脑
 # while True:
