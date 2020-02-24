@@ -9,14 +9,14 @@ import pymongo
 
 class SpiderObjPipeline(object):
     def open_spider(self,spider):
-        myclient = pymongo.MongoClient("mongodb://192.168.37.128:27017/")
+        myclient = pymongo.MongoClient("mongodb://172.26.78.4:27017/")
         self.mydb = myclient["books"]
 
     def process_item(self, item, spider):
-        mycol = self.mydb[item['type']]
-        # yes_or_no = False if len([i for i in mycol.find(item)]) > 0 else True
-        # if yes_or_no:
-        mycol.insert_one(item)
+        mycol = self.mydb[item['title']]
+        yes_or_no = False if len([i for i in mycol.find(item)]) > 0 else True
+        if yes_or_no:
+            mycol.insert_one(item)
         # if spider.name == 'book3':
         #     yes_or_no = False if len([i for i in mycol.find({'name':item['name']})]) > 0 else True
         #     if yes_or_no:

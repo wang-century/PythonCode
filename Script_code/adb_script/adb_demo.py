@@ -4,13 +4,14 @@ from random import choice
 
 def shuabao_app():
     '''刷宝视频脚本'''
-    device_name = '192.168.0.101:5555'###'emulator-5556'
+    device_name = '192.168.0.103:5555'###'emulator-5556'
     os.system('adb connect {}'.format(device_name))
     os.system('adb -s {} shell input keyevent 224'.format(device_name))
-    sleep_list = [i for i in range(6,12,2)] # 等待时间列表
+    sleep_list = [i for i in range(6,7)] # 等待时间列表
     while True:
         print('上滑屏幕',end='\t')
-        os.system('adb -s {} shell input swipe 320 882 320 140'.format( device_name))  # 上划屏幕操作
+        os.system('adb -s {} shell input swipe 320 882 320 140'.format( device_name))  # 上划屏幕操作(视频)
+        #os.system('adb -s {} shell input swipe 882 320 140 320'.format(device_name))  # 左划屏幕操作(阅读小说)
         sleep_time = choice(sleep_list)
         print('等待{}秒'.format(sleep_time))
         sleep(sleep_time)
