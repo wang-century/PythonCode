@@ -25,6 +25,7 @@ class UsePyMysql:
             print(e)
 
     def update_sql(self,sql):
+        """执行更新操作"""
         # SQL 更新语句
         try:
             # 执行SQL语句

@@ -1,3 +1,6 @@
+""" 文件直接运行即可
+    运行命令 python Centos7InstallPython3.py
+"""
 import os
 
 os.system('yum -y groupinstall "Development tools" && yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel && yum install libffi-devel -y')

@@ -1,40 +1,38 @@
+''' 使用tkinter+百度ocr实现简单文字识别程序
+    这里用的是我个人的APP设置，可以自行去申请（免费）
+    详情请看我写的教程 https://centurye.com/?p=1140 或视频 https://www.bilibili.com/video/av54709168
+    或直接百度
+'''
 from tkinter import Frame,Button,Label,Text,END,Tk
 from tkinter.filedialog import askopenfilename
 from tkinter.messagebox import showinfo
 from aip import AipOcr
 
+
 class BaiduOcr():
     '''百度OCR文字识别'''
     def __init__(self):
+        """初始化连接"""
         APP_ID = '11386043'
         API_KEY = 'GhRCZnOKIqs6x76osXqZxGM9'
         SECRET_KEY = 'OLEhkqKpjknGzYtPeu0g4I46FRdXBb2m'
         self.client = AipOcr(APP_ID, API_KEY, SECRET_KEY)
 
-    """ 读取图片 """
-    def get_file_content(self,filePath):
+    def return_result(self,filePath):
+        '''获取识别结果'''
+        # 读取图片
         with open(filePath, 'rb') as fp:
-            return fp.read()
-
-    """ 调用通用文字识别, 图片参数为本地图片 获取原始结果 """
-    def print_Results(self,filePath):
-        image = self.get_file_content(filePath)
-        result = self.client.basicGeneral(image)
-        return result
-
-    """ 获取文字结果 """
-    def print_Text(self,filePath):
-        content = self.print_Results(filePath)
-        result = ""
-        for c in content['words_result']:
-            result += c['words'] + '\n'
+            image_file = fp.read()
+        # 调用通用文字识别, 图片参数为本地图片 获取原始结果
+        content = self.client.basicGeneral(image_file)
+        # 获取文字结果
+        result = "\n".join([i['words'] for i in content['words_result']])
         return result
 
 ocr_cli = BaiduOcr()
 
 class Application(Frame):
     """百度ocr图像识别程序"""
-
     def __init__(self, master, **kw):
         """初始化"""
         super().__init__(master, **kw)
@@ -63,7 +61,7 @@ class Application(Frame):
 
     def execute_ocr(self):
         '''执行识别'''
-        result = ocr_cli.print_Text(self.filename)
+        result = ocr_cli.return_result(self.filename)
         if result:
             self.result_text.insert(1.0, result)
         else:
