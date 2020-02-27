@@ -22,7 +22,7 @@ def shuabao_wifi():
         # for i in range(5):
         #     os.system('adb -s {} shell input swipe 300 1000 300 10'.format(device_name))  # 上划
         #     sleep(10)
-        os.system('adb -s {} shell input keyevent 4'.format(device_name))  # 点击返回键
+        # os.system('adb -s {} shell input keyevent 4'.format(device_name))  # 点击返回键
 
 def shuabao_line():
     """使用usb连接"""
@@ -37,5 +37,5 @@ def shuabao_line():
         os.system('adb shell input keyevent 4')  # 点击返回键
 
 if __name__ == '__main__':
-    # shuabao_wifi()
-    shuabao_line()
+    shuabao_wifi()
+    # shuabao_line()

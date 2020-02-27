@@ -17,6 +17,8 @@ class SpiderObjPipeline(object):
         yes_or_no = False if len([i for i in mycol.find(item)]) > 0 else True
         if yes_or_no:
             mycol.insert_one(item)
+
+
         # if spider.name == 'book3':
         #     yes_or_no = False if len([i for i in mycol.find({'name':item['name']})]) > 0 else True
         #     if yes_or_no:
