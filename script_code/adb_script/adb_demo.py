@@ -7,7 +7,7 @@ from random import choice
 
 def shuabao_wifi():
     '''刷宝视频脚本 使用无线连接'''
-    device_name = '192.168.0.103:5555'
+    device_name = '192.168.0.102:5555'
     os.system('adb connect {}'.format(device_name))
     os.system('adb -s {} shell input keyevent 224'.format(device_name))
     sleep_list = [i for i in range(6,7)] # 等待时间列表

@@ -5,7 +5,6 @@ from tkinter.filedialog import askopenfilename, asksaveasfilename
 
 
 class Application(Frame):
-
     def __init__(self, master=None):
         super().__init__(master)
         self.master = master

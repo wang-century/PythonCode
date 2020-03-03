@@ -1,3 +1,7 @@
+"""测试代码"""
+import time
+
+
 def test_logic_operation():
     '''逻辑运算
     逻辑运算符：
@@ -131,6 +135,7 @@ def demo3():
     a = ['你', '好', '啊']
     print(''.join(a))
     print('-'.join(a))
+    import time
     ''' join函数与字符串连接符'+'效率测试 '''
     start_time = time.time()  # 起始时刻
     for i in range(10000):
@@ -202,7 +207,6 @@ def demo3():
     for i in grammer:
         if i['salary'] > 15000:
             print(i)
-    import time
     # 循环代码效率测试
     start_time = time.time()
     for i in range(1000):
@@ -220,8 +224,20 @@ def demo3():
     end_time2 = time.time()
     print('time1={}\ntime2={}'.format(end_time - start_time, end_time2 - start_time2))
 
+def demo4():
+    """如果a+b+c=1000,且a^2+b^2=c^2(a,b,c为自然数)，如何求出所有a,b,c可能的组合"""
+    start_time = time.time()
+    for i in range(0,1001):
+        for j in range(0,1001):
+            for k in range(0,1001):
+                if (i+j+k)==1000 and (i**2+j**2)==(k**2):
+                    print('可能的数：a:{},b:{},c:{}'.format(i,j,k))
+    end_time = time.time()
+    print('程序所耗费时间：{}'.format(end_time-start_time))
+
+
 def test_return_time_now():
-    '''返回当前时刻'''
+    """返回当前时刻"""
     import time
     date_now_msecs = int(time.time())
     date_now_minutes = date_now_msecs//60
@@ -234,7 +250,7 @@ def test_return_time_now():
 
 
 def test_copy_deepcopy():
-    '''测试浅拷贝和深拷贝'''
+    """测试浅拷贝和深拷贝"""
     import copy
     # 浅拷贝
     a = [10,20,[1,2]]
@@ -267,14 +283,14 @@ def test_copy_deepcopy():
     print('b:', b)
 
 def calculating_factorial(n):
-    '''计算n的阶乘（递归）'''
+    """计算n的阶乘（递归）"""
     if n == 1:
         return 1
     else:
         return n * calculating_factorial(n - 1)
 
 def test_property():
-    '''测试装饰器的使用'''
+    """测试装饰器的使用"""
     class Employee:
         def __init__(self):
             self.__salary = 50000
@@ -298,7 +314,7 @@ def test_property():
     print(emp.salary)
 
 def test_except():
-    '''测试错误捕获机制'''
+    """测试错误捕获机制"""
     try:
         a = input('请输入被除数：')
         b = input('请输入除数：')
@@ -311,7 +327,7 @@ def test_except():
         print('程序结束！（finally语句，无论是否发生异常都会执行！）')
 
 def test_traceback():
-    '''测试traceback模块的使用   异常写入日志文件'''
+    """测试traceback模块的使用   异常写入日志文件"""
     import traceback
     try:
         a = input('请输入被除数：')
@@ -343,7 +359,7 @@ def test_define_exception_class():
         print('年龄正常：',age)
 
 def test_enumerate():
-    '''测试函数和推导式生成列表，操作每行增加行号'''
+    """测试函数和推导式生成列表，操作每行增加行号"""
     # 普通方法
     a = ['我','爱','你']
     result = [i+'#{}'.format(a.index(i)) for i in a]
@@ -354,7 +370,7 @@ def test_enumerate():
     print(result)
 
 def test_pickle():
-    '''测试序列化与反序列化'''
+    """测试序列化与反序列化"""
     import pickle
     # 序列化
     with open('test_pickle.data','wb') as f:
@@ -373,7 +389,7 @@ def test_pickle():
 
 
 def test_csv():
-    '''测试csv文件的读取与写入'''
+    """测试csv文件的读取与写入"""
     import csv
     # csv文件的写入
     a1 = ['ID','姓名','年龄']
@@ -391,7 +407,7 @@ def test_csv():
             print(line)
 
 def test_shutil():
-    '''测试shutil模块  文件和目录拷贝'''
+    """测试shutil模块  文件和目录拷贝"""
     import shutil
     import zipfile
     shutil.copyfile('test_csv.csv','copy_test_csv.csv')   # 拷贝文件
@@ -409,7 +425,7 @@ def test_shutil():
     z2.close()
 
 def get_all_files(path):
-    '''递归打印所有的目录和文件'''
+    """递归打印所有的目录和文件"""
     import os
     childFiles = os.listdir(path)
     for file in childFiles:
@@ -417,6 +433,24 @@ def get_all_files(path):
         if os.path.isdir(filepath):
             get_all_files(filepath)
         print(filepath)
+
+def test_multiprocessing():
+    """测试多线程的使用"""
+    from multiprocessing import Process
+    from time import sleep
+    def print_a(name):
+        for i in range(7):
+            print('print_a{}'.format(name+str(i)))
+            sleep(0.5)
+
+    def print_b(name):
+        for i in range(7):
+            print('print_b{}'.format(name+str(i)))
+
+    print('主进程开始运行')
+    process_a = Process(target=print_a,args=('程序a',))
+    print_a('程序a开始执行')
+    process_a.start()
 
 
 if __name__ == '__main__':
@@ -430,4 +464,6 @@ if __name__ == '__main__':
     #test_pickle()  # 测试序列化与反序列化
     #test_csv() # 测试csv文件读取与写入
     #test_shutil()   # 测试文件的压缩与解压缩
-    get_all_files('../beginToLearn')
+    #get_all_files('../beginToLearn')    # 递归打印所有的目录和文件
+    # test_multiprocessing()  # 测试多线程
+    demo4()

@@ -95,14 +95,14 @@ class MeiziSpider:
             return True
         try:
             crawl_url = self.index_url_list[type_choice-1]
-        except Exception as e:
-            print('输入错误{}'.format(e))
-        else:
             response = HTML(self.get_response(url=crawl_url).text)
             total_page = response.xpath('//div[@class="nav-links"]//a[last()-1]/text()')[0]  # 获取总页数
             choice = input('当前共{}页套图，请选择要爬取的页数(范围1-{})：\n示例：3-5爬取3页到5页的内容(包括3,5)\n'.format(total_page, total_page))
             start_page = int(choice.split('-')[0])
             end_page = int(choice.split('-')[1])
+        except Exception as e:
+            print('输入错误{}'.format(e))
+        else:
             crawl_page_list = ['https://www.mzitu.com/xinggan/page/{}/'.format(i) for i in
                                range(start_page, end_page + 1)]
             for url in crawl_page_list:

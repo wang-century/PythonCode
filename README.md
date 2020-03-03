@@ -19,6 +19,7 @@ Python代码.
     - UsePyMysql.py     使用pymysql
 
 - beginToLearn  学习过程编写的测试代码（仅供作者参考）
-
-- test_gui      学习GUI(图形用户界面)过程的测试代码（仅供作者参考）
+    - testcode      学习过程的测试代码
+    - test_gui      学习GUI(图形用户界面)过程的测试代码
+    - test_multiprocess 学习多线程过程的测试代码
 </pre>
