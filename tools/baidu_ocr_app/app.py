@@ -27,14 +27,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.openfile_name = None  # 初始化打开的图片为空，用于判定是否已经打开图片，防止识别时出现错误
 
     @pyqtSlot()
-    def on_action_help_triggered(self):
+    def on_action_help_2_triggered(self):
         """
         帮助（点击事件）
         """
         QMessageBox.information(self, '帮助', '使用方式：\n点击“选择图片”，选择要识别文字的图片并确定，点击开始识别，识别结果将在下方文本框中显示。\n可以将识别结果复制到要保存的地方。')
 
     @pyqtSlot()
-    def on_action_abou_triggered(self):
+    def on_action_about_2_triggered(self):
         """
         关于（点击事件）
         """

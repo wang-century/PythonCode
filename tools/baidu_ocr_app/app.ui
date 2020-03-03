@@ -70,12 +70,17 @@
     <property name="title">
      <string>程序</string>
     </property>
-    <addaction name="separator"/>
-    <addaction name="action_help"/>
-    <addaction name="action_abou"/>
     <addaction name="action_quit"/>
    </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="action_help_2"/>
+    <addaction name="action_about_2"/>
+   </widget>
    <addaction name="menu"/>
+   <addaction name="menu_2"/>
   </widget>
   <action name="action_help">
    <property name="text">
@@ -90,6 +95,16 @@
   <action name="action_quit">
    <property name="text">
     <string>退出</string>
+   </property>
+  </action>
+  <action name="action_help_2">
+   <property name="text">
+    <string>使用说明</string>
+   </property>
+  </action>
+  <action name="action_about_2">
+   <property name="text">
+    <string>关于</string>
    </property>
   </action>
  </widget>
