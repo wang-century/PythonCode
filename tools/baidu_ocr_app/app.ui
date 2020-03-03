@@ -10,6 +10,9 @@
     <height>600</height>
    </rect>
   </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::ActionsContextMenu</enum>
+  </property>
   <property name="windowTitle">
    <string>OCR文字识别</string>
   </property>
@@ -23,39 +26,9 @@
       <height>501</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>500</x>
-      <y>0</y>
-      <width>295</width>
-      <height>80</height>
-     </rect>
+    <property name="contextMenuPolicy">
+     <enum>Qt::ActionsContextMenu</enum>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QPushButton" name="pushButton_help">
-       <property name="text">
-        <string>帮助</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_about">
-       <property name="text">
-        <string>关于</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_quit">
-       <property name="text">
-        <string>退出</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
    </widget>
    <widget class="QWidget" name="horizontalLayoutWidget_2">
     <property name="geometry">
@@ -84,24 +57,44 @@
     </layout>
    </widget>
   </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>程序</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="action_help"/>
+    <addaction name="action_abou"/>
+    <addaction name="action_quit"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <action name="action_help">
+   <property name="text">
+    <string>帮助</string>
+   </property>
+  </action>
+  <action name="action_abou">
+   <property name="text">
+    <string>关于</string>
+   </property>
+  </action>
+  <action name="action_quit">
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
  </widget>
- <resources/>
- <connections>
-  <connection>
-   <sender>pushButton_quit</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>646</x>
-     <y>33</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>643</x>
-     <y>65</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <resources>
+  <include location="E:/Software/program/Anaconda3/envs/env1/Scripts/imgs.qrc"/>
+ </resources>
+ <connections/>
 </ui>
