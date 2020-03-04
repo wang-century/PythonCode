@@ -42,7 +42,7 @@ class Ui_About(object):
     def retranslateUi(self, About):
         _translate = QtCore.QCoreApplication.translate
         About.setWindowTitle(_translate("About", "关于"))
-        self.label.setText(_translate("About", "该软件使用百度提供的ocr文字识别与PyQt5开发。"))
+        self.label.setText(_translate("About", "该软件使用PyQt5开发。"))
         self.label_2.setText(_translate("About", "作者：centuryw"))
         self.pushButton_visit_website.setText(_translate("About", "访问作者网站"))
         self.pushButton_visit_github.setText(_translate("About", "访问作者GitHub"))
