@@ -6,7 +6,7 @@ Python代码.
     - baidu_ocr_app             使用pyqt5+百度ocr实现简单文字识别程序
     - excel_key_search          批量搜索excel中的关键字
     - notebook_gui.py           使用tkinter实现简单记事本程序
-    - paint_gui.py              使用tkinter实现简单画图程序（未完成）
+
     
 
 - spider_code   爬虫代码
