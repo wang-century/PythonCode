@@ -13,8 +13,8 @@ Python代码.
 
 - spider_code   爬虫代码
     - meizituSpider.py          爬虫爬取妹子图（2020年2月27日测试可用）
-
-
+    - pixivSpider.py            输入作者id爬取该作者所有pixiv插画（chromedriver.exe为此爬虫所需文件）
+    
 - Script_code   脚本包
     - adb_script                安卓adb自动脚本
         - adb_demo.py           运行此文件
