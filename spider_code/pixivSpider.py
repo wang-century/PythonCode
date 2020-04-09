@@ -20,8 +20,8 @@ from re import findall
 from pathlib import Path
 from os import mkdir
 
-username = ''   # 你的pixiv账号
-passwd = ''     # 你的pixiv密码
+username = '1649601714@qq.com'   # 你的pixiv账号
+passwd = 'wang2jing@'     # 你的pixiv密码·
 
 class SpiderPixiv:
     """pixiv爬虫"""
