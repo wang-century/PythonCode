@@ -6,6 +6,7 @@ Python代码.
     - baidu_ocr_app             使用pyqt5+百度ocr实现简单文字识别程序
     - excel_key_search          批量搜索excel中的关键字(运行excel_tool.py文件)
     - notebook_gui.py           使用tkinter实现简单记事本程序
+    - recognize_Idcard.py       使用百度识别api实现识别身份证并保存到excel
     
 - spider_code   爬虫代码
     - meizituSpider.py          爬虫爬取妹子图（2020年2月27日测试可用）
