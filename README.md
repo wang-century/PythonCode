@@ -2,8 +2,6 @@
 Python代码.
 <pre>
 - tools_source     工具包源代码
-    注：下列工具已经打包上传到我的网站供下载使用，可以在我的<a href="https://centurye.com/?page_id=1176">网站网页</a>下方找到下载
-    下载后直接解压并运行目录中的exe文件即可(注意不要用管理员身份运行)
     - baiduocr_gui.py           使用tkinter+百度ocr实现简单文字识别程序
     - baidu_ocr_app             使用pyqt5+百度ocr实现简单文字识别程序
     - excel_key_search          批量搜索excel中的关键字(运行excel_tool.py文件)
