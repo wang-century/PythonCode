@@ -30,6 +30,6 @@ def recognition_directory_imgs(filePath):
             people = ocr.recognition_img(filePath)
             save_file.write(','.join([people['name'],people['id']+'\t',people['birthday'],people['sex'],people['nation'],people['address']])+'\n')
 
-recognition_directory_imgs('../tools')    # 在此输入文件名进行识别操作
+recognition_directory_imgs('')    # 在此输入文件名进行识别操作
 
 save_file.close()   # 关闭csv文件
