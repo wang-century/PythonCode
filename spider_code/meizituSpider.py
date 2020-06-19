@@ -59,7 +59,7 @@ class MeiziSpider:
             with open(img_name, 'wb') as f:  # 请求图片url获取图片内容并保存图片
                 f.write(self.get_response(img_url, referer=url, host='i5.mmzztt.com').content)
                 print('已保存{}'.format(img_name))
-                sleep(1)  # 设置延时，防止高频次导致的问题
+                sleep(0.5)  # 设置延时，防止高频次导致的问题
         next_page_url = response.xpath('//a[span[text()="下一页»"]]/@href'.format(name))
         if len(next_page_url) > 0:
             self.save_img(next_page_url[0], save_path)
@@ -80,7 +80,7 @@ class MeiziSpider:
                 pass
             print('正在爬取{}'.format(save_path))
             self.save_img(url, save_path=save_path)  # 根据套图url获取所有图片并保存
-            sleep(10)
+            sleep(5)
         # 抓取下一页地址 若不存在则程序退出
         next_url = response.xpath('//a[text()="下一页»"]/@href')
         if len(next_url) > 0:
