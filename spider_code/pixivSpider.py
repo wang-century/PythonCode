@@ -20,8 +20,8 @@ from re import findall
 from pathlib import Path
 from os import mkdir
 
-username = '1649601714@qq.com'   # 你的pixiv账号
-passwd = 'wang2jing@'     # 你的pixiv密码·
+username = ''   # 你的pixiv账号
+passwd = ''     # 你的pixiv密码·
 
 class SpiderPixiv:
     """pixiv爬虫"""
@@ -42,7 +42,6 @@ class SpiderPixiv:
     def get_cookies(self):
         """用于检测是否存在cookies文件（是则直接读取cookies，否则登录获取cookies并保存然后读取）"""
         try:
-
             self.read_cookies()
         except Exception:
             self.save_cookies()
@@ -51,7 +50,8 @@ class SpiderPixiv:
 
     def save_cookies(self):
         """保存cookies到文件（不用每次爬取都登录一次）"""
-        browser = webdriver.Chrome()  # 创建谷歌浏览器对象
+        chrome_driver = '.\\chromedriver.exe'
+        browser = webdriver.Chrome(executable_path=chrome_driver)  # 创建谷歌浏览器对象
         browser.get('https://accounts.pixiv.net/login')
         print('访问网址：{}访问网站标题：{}'.format(browser.current_url, browser.title))  # 打印网站网址和标题
         find_username_input = (By.XPATH, '//input[@autocomplete="username"]')

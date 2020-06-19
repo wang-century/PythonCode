@@ -11,7 +11,8 @@ Python代码.
 
 - spider_code   爬虫代码
     - meizituSpider.py          爬虫爬取妹子图（2020年2月27日测试可用）
-    - pixivSpider.py            输入作者id爬取该作者所有pixiv插画（chromedriver.exe为此爬虫所需文件）
+    - pixivSpider.py            输入作者id爬取该作者所有pixiv插画（chromedriver.exe为此爬虫所需文件）   # 注：不可用（pixiv新添加人机验证未实现）
+    - doubanBookTop250Spider.py 爬取豆瓣图书Top250
     
 - Script_code   脚本包
     - adb_script                安卓adb自动脚本
