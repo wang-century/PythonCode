@@ -28,4 +28,7 @@ Python代码.
 - practice_code
     - mathematical_thinking.py  数学思维修炼练习代码
     - practice_leetcode.py      leetcode习题代码
+
+- tank_game    坦克大战（pygame开发,未完成）
+    
 </pre>
