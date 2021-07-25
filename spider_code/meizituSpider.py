@@ -31,15 +31,7 @@ class MeiziSpider:
     def get_response(self, url, referer=None, host=None):
         """获取网页响应"""
         headers = {
-            'Accept': 'image/webp,image/apng,image/*,*/*;q=0.8',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Accept-Language': 'en,zh-CN;q=0.9,zh;q=0.8,ru;q=0.7,und;q=0.6',
-            'Connection': 'keep-alive',
-            'Host': host,
             'Referer': referer,
-            'Sec-Fetch-Dest': 'image',
-            'Sec-Fetch-Mode': 'no-cors',
-            'Sec-Fetch-Site': 'cross-site',
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36'
         }
         response = requests.get(url=url, headers=headers)
