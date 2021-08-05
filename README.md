@@ -16,6 +16,15 @@ Python代码.
     - QCWYBigDataSpider.py      爬取前程无忧大数据职位信息并保存到csv文件
     - ZhiLianBigDataSpider.py   抓取智联招聘大数据岗位信息  注：不可用（已过时）
     
+- advanced_demo    python进阶练习
+    - multiprocessing_demo      多进程包multiprocessing的使用
+        - demo1.py              创建带参和不带参子进程
+        - demo2.py              join()的使用方法
+        - demo3.py              进程的属性
+        - demo4.py              使用继承方式创建进程
+        - demo5.py              进程池的使用(非阻塞)
+        - demo6.py              进程池的使用(阻塞)
+
 - Script_code   脚本包
     - adb_script                安卓adb自动脚本
         - adb_demo.py           运行此文件
