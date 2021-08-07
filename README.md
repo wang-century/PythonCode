@@ -24,6 +24,13 @@ Python代码.
         - demo4.py              使用继承方式创建进程
         - demo5.py              进程池的使用(非阻塞)
         - demo6.py              进程池的使用(阻塞)
+        - demo7.py              多个进程之间数据不共享案例
+        - demo8.py              进程之间通过Queue队列实现通信
+        - demo9.py              进程池内进程之间通信
+        - demo10.py             Queue队列的常用方法
+
+    - threading_demo            多线程包threading的使用
+        - demo1.py              互斥锁的使用
 
 - Script_code   脚本包
     - adb_script                安卓adb自动脚本
