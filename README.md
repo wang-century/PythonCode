@@ -32,6 +32,11 @@ Python代码.
     - threading_demo            多线程包threading的使用
         - demo1.py              互斥锁的使用
 
+    - socket_demo               网络编程
+        - demo1                 udp接收与发送数据
+        - demo2                 udp实现聊天(多线程)
+        
+
 - Script_code   脚本包
     - adb_script                安卓adb自动脚本
         - adb_demo.py           运行此文件
